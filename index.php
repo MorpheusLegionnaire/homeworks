@@ -24,3 +24,25 @@ print_r($neskolko);
 echo "</pre>";
 
 
+define ('pi', 3.14);
+
+echo pi;
+echo "<br>";
+$myVar = 'hey';
+
+$hey = 'bro';
+
+$bro = 'Hello, variable';
+
+echo $hey;
+
+echo $$$myVar;
+
+echo "<br>";
+
+$x = & $z;
+
+$x = 32;
+$z++;
+
+echo $x;
