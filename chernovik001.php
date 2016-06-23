@@ -82,4 +82,36 @@ $object001 = new user001();
 //$object001->addUser001('ZvenG2', 'Zven1998', 'zven.g2@gmail.com', 'Imya Zvena', '18', 'Berlin');
 //$object001->updateUser('ZvenPWD1998', 'ZvenG2');
 //$object001->deleteUser('ZvenG2');
-$object001->sortPoVozrastu('22');
+//$object001->sortPoVozrastu('22');
+
+?>
+
+<div>
+<form  method="post">
+    Login: <input type="text" name="login"><br><br>
+    Password: <input type="password" name="password"><br><br>
+    email: <input type="email" name="email"><br><br>
+    Full name: <input type="text" name="full_name"><br><br>
+    Age: <input type="text" name="age"><br><br>
+    City: <input type="text" name="city"><br><br>
+    <input type="submit" name="button_add_user"><br><br>
+</form>
+</div>
+
+<?php
+/*
+echo "<br><br>";
+echo "Login: ".$_POST['login']."<br>";
+echo "Password:".$_POST['password']."<br>";
+echo "email: ".$_POST['email']."<br>";
+echo "Full name :".$_POST['full_name']."<br>";
+echo "Age: ".$_POST['age']."<br>";
+echo "City: ".$_POST['city']."<br>";
+*/
+?>
+
+<?php
+
+
+
+?>
