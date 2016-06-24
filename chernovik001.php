@@ -11,6 +11,39 @@ class connect_db
 
 class user001 extends connect_db
 {
+
+    public function addUser002 ()
+    {
+        if (isset($_POST['button_add_user'])) {
+            if (!empty($_POST['login']) &&
+                !empty($_POST['password']) &&
+                !empty($_POST['passwordRepeat']) &&
+                !empty($_POST['email']) &&
+                !empty($_POST['full_name']) &&
+                !empty($_POST['age']) &&
+                !empty($_POST['city'])
+            ) {
+                if (($login = $_POST['login']) &&
+                    ($password = $_POST['password']) &&
+                    ($passwordRepeat = $_POST['passwordRepeat']) &&
+                    ($email = $_POST['email']) &&
+                    ($full_name = $_POST['full_name']) &&
+                    ($age = $_POST['age']) &&
+                    ($city = $_POST['city'])
+                ) {
+                    if ($_POST['password'] == $_POST['passwordRepeat']) {
+                        $this->addUser001("$login", "$password", "$email", "$full_name", "$age", "$city");
+                        echo 'Вы зарегистрировались';
+                    } else {
+                        echo 'Ошибка! Пароли не совпадают.';
+                    }
+                }
+            } else {
+                echo "Заполните пожалуйста все поля";
+            }
+        }
+    }
+
     public function showUser001()
     {
         $mysqli = $this->connect_db();
@@ -79,24 +112,12 @@ class user001 extends connect_db
 
 $object001 = new user001();
 //$object001->showUser001();
-//$object001->addUser001('ZvenG2', 'Zven1998', 'zven.g2@gmail.com', 'Imya Zvena', '18', 'Berlin');
+$object001->addUser002();
 //$object001->updateUser('ZvenPWD1998', 'ZvenG2');
 //$object001->deleteUser('ZvenG2');
 //$object001->sortPoVozrastu('22');
 
 ?>
-
-<div>
-<form  method="post">
-    Login: <input type="text" name="login"><br><br>
-    Password: <input type="password" name="password"><br><br>
-    email: <input type="email" name="email"><br><br>
-    Full name: <input type="text" name="full_name"><br><br>
-    Age: <input type="text" name="age"><br><br>
-    City: <input type="text" name="city"><br><br>
-    <input type="submit" name="button_add_user"><br><br>
-</form>
-</div>
 
 <?php
 /*
@@ -108,10 +129,4 @@ echo "Full name :".$_POST['full_name']."<br>";
 echo "Age: ".$_POST['age']."<br>";
 echo "City: ".$_POST['city']."<br>";
 */
-?>
-
-<?php
-
-
-
 ?>
